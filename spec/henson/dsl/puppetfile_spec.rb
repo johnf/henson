@@ -18,10 +18,12 @@ describe Henson::DSL::Puppetfile do
     it "raises PuppetfileError if a syntax error is encountered" do
       file = "spec/fixtures/Puppetfile.with_syntax_error"
 
-      expect { described_class.evaluate file }.to raise_error(
-        Henson::PuppetfileError,
-        /Henson encountered a syntax error in '#{file}':/
-      )
+      silence_warnings do
+        expect { described_class.evaluate file }.to raise_error(
+          Henson::PuppetfileError,
+          /Henson encountered a syntax error in '#{file}':/
+        )
+      end
     end
 
     it "raises PuppetfileError if a ScriptError is encountered" do
