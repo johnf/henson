@@ -17,10 +17,14 @@ require "mocha/api"
 
 require "fakeweb"
 
+require "helpers/warnings"
+
 RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.include WarningHelpers
 end
 
 module Henson
