@@ -25,7 +25,7 @@ module Henson
 
             validate if self.respond_to? :validate
           else
-            raise not_found_error_class, "#{file} does not exist"
+            raise not_found_error_class, "Tried to open #{file}"
           end
         end
 
