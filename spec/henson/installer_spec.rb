@@ -1,14 +1,28 @@
 require "spec_helper"
 
 describe Henson::Installer do
+  let(:ui)     { mock }
+
   before do
     Henson.reset_settings
     Henson.settings[:puppetfile] = File.expand_path("spec/fixtures/Puppetfile")
+
+    Henson.stubs(:ui).returns(ui)
+    ui.stub(:debug)
+    ui.stub(:success)
+  end
+
+  after do
+    Henson.unstub(:ui)
   end
 
   context ".install!" do
     it "responds to .install!" do
+      File.stub(:open).with(anything(), "w").and_return(StringIO.new)
+
       Henson::Installer.install!
+
+      File.unstub(:open)
     end
   end
 

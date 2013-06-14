@@ -75,7 +75,7 @@ module Henson
         end
       end
 
-      File.open(lockfile) { |f| f.write lock }
+      File.open(lockfile, "w") { |f| f.write lock }
     end
 
     def self.lockfile
