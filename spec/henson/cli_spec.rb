@@ -35,6 +35,10 @@ describe Henson::CLI do
       Henson::Installer.stubs(:install!)
     end
 
+    after do
+      Henson::Installer.unstub(:install!)
+    end
+
     context "options" do
       it "sets local if --local" do
         ARGV = ["install", "--local"]
