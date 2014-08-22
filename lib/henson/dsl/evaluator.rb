@@ -20,7 +20,7 @@ module Henson
       # Raises <not_found_error_class> if the file does not exist.
       def evaluate file
         self.tap do
-          if File.exists? file
+          if File.exist? file
             instance_eval File.read(file)
 
             validate if self.respond_to? :validate
