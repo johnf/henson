@@ -20,10 +20,12 @@ describe Henson::DSL::Modulefile do
     it "raises ModulefileError if a syntax error is encountered" do
       file = "spec/fixtures/Modulefile.with_syntax_error"
 
-      expect { described_class.evaluate(file) }.to raise_error(
-        Henson::ModulefileError,
-        /Henson encountered a syntax error in '#{file}':/
-      )
+      silence_warnings do
+        expect { described_class.evaluate(file) }.to raise_error(
+          Henson::ModulefileError,
+          /Henson encountered a syntax error in '#{file}':/
+        )
+      end
     end
 
     it "raises ModulefileError if a ScriptError is encountered" do
