@@ -48,14 +48,14 @@ describe Henson::Source::Tarball do
       it.expects(:version).returns("1.0.0")
       it.expects(:cache_path).returns(file)
       file.expects(:file?).returns(true)
-      expect(it.fetched?).to be_true
+      expect(it.fetched?).to be true
     end
 
     it "should return false if the tarball does not exist" do
       it.expects(:version).returns("1.0.0")
       it.expects(:cache_path).returns(dir)
       dir.expects(:file?).returns(false)
-      expect(it.fetched?).to be_false
+      expect(it.fetched?).to be false
     end
   end
 

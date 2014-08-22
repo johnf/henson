@@ -13,20 +13,20 @@ describe Henson::Installer do
   end
 
   it "local! makes local setting true" do
-    expect(Henson.settings[:local]).to_not be_true
+    expect(Henson.settings[:local]).to_not be true
     Henson::Installer.local!
-    expect(Henson.settings[:local]).to be_true
+    expect(Henson.settings[:local]).to be true
   end
 
   it "no_cache! makes no_cache setting true" do
-    expect(Henson.settings[:no_cache]).to_not be_true
+    expect(Henson.settings[:no_cache]).to_not be true
     Henson::Installer.no_cache!
-    expect(Henson.settings[:no_cache]).to be_true
+    expect(Henson.settings[:no_cache]).to be true
   end
 
   it "clean! makes clean setting true" do
-    expect(Henson.settings[:clean]).to_not be_true
+    expect(Henson.settings[:clean]).to_not be true
     Henson::Installer.clean!
-    expect(Henson.settings[:clean]).to be_true
+    expect(Henson.settings[:clean]).to be true
   end
 end

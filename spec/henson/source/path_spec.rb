@@ -21,7 +21,7 @@ describe Henson::Source::Path do
 
   describe "#fetched?" do
     it "should be true" do
-      expect(it.fetched?).to be_true
+      expect(it.fetched?).to be true
     end
   end
 
@@ -63,23 +63,23 @@ describe Henson::Source::Path do
   context "valid?" do
     it "returns true if path_exists? is true" do
       it.stubs(:path_exists?).returns(true)
-      expect(it.send(:valid?)).to be_true
+      expect(it.send(:valid?)).to be true
     end
 
     it "returns false if path_exists? is false" do
       it.stubs(:path_exists?).returns(false)
-      expect(it.send(:valid?)).to be_false
+      expect(it.send(:valid?)).to be false
     end
   end
 
   context "path_exists?" do
     it "returns true if path is defined and is a directory" do
-      expect(it.send(:path_exists?)).to be_true
+      expect(it.send(:path_exists?)).to be true
     end
 
     it "returns false if path is not a directory" do
       it.stubs(:path).returns("/not/a/real/path")
-      expect(it.send(:path_exists?)).to be_false
+      expect(it.send(:path_exists?)).to be false
     end
   end
 

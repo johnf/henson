@@ -38,17 +38,17 @@ describe Henson::CLI do
     context "options" do
       it "sets local if --local" do
         Henson::CLI.start([:install, "--local"])
-        expect(Henson.settings[:local]).to be_true
+        expect(Henson.settings[:local]).to be true
       end
 
       it "sets no_cache if --no-cache" do
         Henson::CLI.start([:install, "--no-cache"])
-        expect(Henson.settings[:no_cache]).to be_true
+        expect(Henson.settings[:no_cache]).to be true
       end
 
       it "sets clean if --clean" do
         Henson::CLI.start([:install, "--clean"])
-        expect(Henson.settings[:clean]).to be_true
+        expect(Henson.settings[:clean]).to be true
       end
 
       it "sets path if --path" do

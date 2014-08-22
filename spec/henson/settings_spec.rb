@@ -3,11 +3,11 @@ require "spec_helper"
 describe Henson::Settings do
   context "initialize" do
     it "defaults quiet to false" do
-      expect(Henson::Settings.new[:quiet]).to be_false
+      expect(Henson::Settings.new[:quiet]).to be false
     end
 
     it "defaults verbose to false" do
-      expect(Henson::Settings.new[:verbose]).to be_false
+      expect(Henson::Settings.new[:verbose]).to be false
     end
 
     it "defaults puppetfile to Puppetfile" do
@@ -21,7 +21,8 @@ describe Henson::Settings do
     end
 
     it "accepts a hash that will override the defaults" do
-      expect(Henson::Settings.new(:quiet => true)).to be_true
+      # TODO Are we happy with this test being truth and not checking the hash
+      expect(Henson::Settings.new(:quiet => true)).to be_truthy
     end
   end
 

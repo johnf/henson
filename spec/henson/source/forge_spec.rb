@@ -17,7 +17,7 @@ describe Henson::Source::Forge do
 
   describe "#installed?" do
     it "should always return false" do
-      expect(it.installed?).to be_false
+      expect(it.installed?).to be false
     end
   end
 

@@ -24,12 +24,12 @@ describe Henson::Source::Generic do
 
     it "returns true if any version satisfies the requirement" do
       it.stubs(:versions).returns(["0.8", "1.0.11"])
-      expect(it.satisfies?(requirement)).to be_true
+      expect(it.satisfies?(requirement)).to be true
     end
 
     it "returns false if no version satisfies the requirement" do
       it.stubs(:versions).returns(["0.8", "1.6.0"])
-      expect(it.satisfies?(requirement)).to be_false
+      expect(it.satisfies?(requirement)).to be false
     end
   end
 end

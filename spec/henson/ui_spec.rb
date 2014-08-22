@@ -127,7 +127,7 @@ describe Henson::UI do
     it "should change verbose setting to true" do
       Henson.settings[:verbose] = false
       ui.debug!
-      expect(Henson.settings[:verbose]).to be_true
+      expect(Henson.settings[:verbose]).to be true
     end
   end
 
@@ -135,7 +135,7 @@ describe Henson::UI do
     it "should change quiet setting to true" do
       Henson.settings[:quiet] = false
       ui.quiet!
-      expect(Henson.settings[:quiet]).to be_true
+      expect(Henson.settings[:quiet]).to be true
     end
   end
 end
