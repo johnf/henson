@@ -11,7 +11,7 @@ module Henson
       if path = opts.delete(:path)
         Path.new name, path
       elsif git = opts.delete(:git)
-        Git.new name, git.delete(:repo), git
+        Git.new name, git, opts
       elsif forge = opts.delete(:forge)
         Forge.new name, requirement, forge
       elsif github = opts.delete(:github) || opts.delete(:github_tarball)
